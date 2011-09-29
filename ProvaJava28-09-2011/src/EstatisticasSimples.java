@@ -39,48 +39,12 @@ return mediaDeValores;
 
 public static double[] calcula(double[] valoresDeEntrada) {
 	double valoresDeSaida[] = {0,0,0,0};
-	for (int j=0;j<4;j++){
-		if(j==0){
-			double valorMinimoCalculado = valoresDeEntrada[0];
-			
-			for(int i=0; i<valoresDeEntrada.length; i++ ){
-				if(valoresDeEntrada[i] < valorMinimoCalculado){
-					valorMinimoCalculado = valoresDeEntrada[i];
-				}
-			}
-			valoresDeSaida[j] = valorMinimoCalculado;
-
-			
-		}
-		if(j==1){
-			double valorMaximoCalculado = valoresDeEntrada[0];
-			for(int i=0; i<valoresDeEntrada.length; i++ ){
-				if(valoresDeEntrada[i] > valorMaximoCalculado){
-					valorMaximoCalculado = valoresDeEntrada[i];
-				}
-			}
-			valoresDeSaida[j] = valorMaximoCalculado;
-			
-		}
-		if(j==2){
-			int quantidadeDeValores = valoresDeEntrada.length; 
-			valoresDeSaida[j] = quantidadeDeValores;
-			
-		}
-		if(j==3){
-			double somaDosValores = 0;
-			double mediaDeValores = 0;
-			for(int i=0; i<valoresDeEntrada.length; i++){
-				somaDosValores = somaDosValores + valoresDeEntrada[i];
-			}
-			mediaDeValores = somaDosValores/valoresDeEntrada.length;
-			
-			valoresDeSaida[j] = mediaDeValores;
-			
-		}
-
-
-	}
+	
+	valoresDeSaida[0] =  calculaValorMinimo(valoresDeEntrada);
+	valoresDeSaida[1] =  calculaValorMaximo(valoresDeEntrada);
+	valoresDeSaida[2] =  calculaQuantidade(valoresDeEntrada);
+	valoresDeSaida[3] =  calculaMedia(valoresDeEntrada);
+	
 	return valoresDeSaida;
 	
 
